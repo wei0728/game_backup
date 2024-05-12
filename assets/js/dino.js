@@ -50,7 +50,7 @@ let model;
 window.onload = function(){ 
 
     if(gameOver == true){
-        console.log("game over"); 
+
         getElementById.ready 
         document.addEventListener("keydown", playAgain);
         return;
@@ -82,7 +82,8 @@ window.onload = function(){
 }
 //keyPressed();
 function update(){
-    if (gameOver==true){
+    if (gameOver==true){    
+        send_score();
         return ;
     }
     console.log(handstate);
@@ -199,4 +200,30 @@ function playAgain(e){
 }
 function return_score(){
     return score;
+}
+function send_score(){
+    var xhr = new XMLHttpRequest();
+        
+        // Prepare the data to send
+        var data = {
+            value: score // Change 'Your value here' to the value you want to send
+        };
+        
+        // Convert the data to a JSON string
+        var jsonData = JSON.stringify(data);
+        
+        // Set up the AJAX request
+        xhr.open("POST", "runner.php", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        
+        // Define what happens on successful data submission
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                // Request was successful
+                console.log(xhr.responseText); // Log the response from the server
+            }
+        };
+        
+        // Send the request
+        xhr.send(jsonData);
 }

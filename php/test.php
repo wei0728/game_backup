@@ -1,9 +1,34 @@
-<?php
+ <html>
+ <head>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ </head>
 
-   $data = array();
-   if(isset($_POST['randomAnswer']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH'])) {
-   $data = 'You number is: ' . $_POST['randomAnswer'];       
-   echo json_encode($data);  
-   die();      
-    }
- ?>
+ </body>
+ <div id = "random"></div>
+
+ <script type = "text/javascript">
+
+$(document).ready(function() {
+
+var number1 = Math.round(Math.random() * 6) + 1;
+var number2 = Math.round(Math.random() * 6) + 1;
+var randomAnswer = number1 + number2;
+
+$.ajax({
+   url: "test2.php",
+   method: "POST",
+   dataType: "json",
+   data: {randomAnswer: randomAnswer},
+   success: function (result) {
+      alert("result: " + result);
+      $("#random").html(result);
+   }
+ });
+
+
+});
+
+</script>
+
+</body>
+</html>

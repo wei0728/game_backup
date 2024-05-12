@@ -1,33 +1,30 @@
-<html>
- <head>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
- </head>
+<?php
 
- </body>
- <div id = "random"></div>
-
- <script type = "text/javascript">
-
-$(document).ready(function() {
-
-var number1 = Math.round(Math.random() * 6) + 1;
-var number2 = Math.round(Math.random() * 6) + 1;
-var randomAnswer = number1 + number2;
-
-$.ajax({
-  url: "test.php",
-  method: "POST",
-  dataType: "json",
-  data: {randomAnswer: randomAnswer},
-  success: function (result) {     
-    console.log( "hello world");
-      alert("result: " + result);
-      $("#random").html(result);
-   }
- });
-});
-
-</script>
-
-</body>
-</html>
+    $data = array();
+    if(isset($_POST['randomAnswer']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH'])) {
+    $server_name = '127.0.0.1:3306';
+    $username = 'root';
+    $password = '12345678';
+    $dbname = 'project';
+    $conn = mysqli_connect($server_name, $username, $password, $dbname);
+    if (!$conn){
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    $sql = "select * from account where player_acc = 'wei' and player_psw = md5('12345678')";
+    $result = mysqli_query($conn, $sql); 
+    if (mysqli_num_rows($result) > 0) {      
+      // output data of each row
+      while($row = mysqli_fetch_assoc($result)) {
+          $data = 'acc =  ' . $row["player_acc"];       
+          echo json_encode($data);  
+          exit;
+      }
+  } 
+    else{
+        $message = "user account or password incorrect";
+        echo "<script>alert('$message');</script>";
+    }
+    die();      
+    }
+    
+ ?>
