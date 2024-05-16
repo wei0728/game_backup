@@ -220,7 +220,7 @@ function send_score(){
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                 // Request was successful
-                console.log(xhr.responseText); // Log the response from the server
+                //console.log(xhr.responseText); // Log the response from the server
             }
         };
         

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
         <link rel=stylesheet type="text/css" href="/assets/css/classic_game.css">
-        <title>Phaser3.70</title>
+        <title>Phaser3.70</title>        
+        <script src="//cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
+        <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
         <script>
             var model_url = "/assets/model.json";
         </script>
         <a href="home_page.php">
-            <button>Click Me!</button>
+            <button>home</button>
         </a>
-        <script src="//cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
-        <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
     </head>
     <body>`
         <form action="#" method = "post">
