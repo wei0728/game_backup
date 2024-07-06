@@ -11,5 +11,6 @@
             <b>Email : <b><input type="email", name = "email"><br>
             <button type="submit">submit</button>
         </form>
+        
     </body>
 </html>

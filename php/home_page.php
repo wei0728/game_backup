@@ -95,7 +95,7 @@
         <div class="show_game">
             <div class="card">
                 <div class="pic">
-                    <a href="runner.php"><img src="/assets/img/dino.png", alt = "Avatar"></a>
+                    <a href="aerobics.php"><img src="/assets/img/dino.png", alt = "Avatar"></a>
                 </div>
                 <div class="text">
                     <h3>小恐龍</h3>

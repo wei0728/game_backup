@@ -14,7 +14,7 @@
             <button>home</button>
         </a>
     </head>
-    <body>`
+    <body>
         <form action="#" method = "post">
             <canvas id = "cam" width="320" height="240"></canvas>
             <script src="/assets/js/classic_game.js"></script>        

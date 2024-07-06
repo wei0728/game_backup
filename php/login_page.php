@@ -45,7 +45,7 @@
                         $_SESSION['last_name'] = $row["player_last_name"];
                         $_SESSION['first_name'] = $row["player_first_name"];
                         $_SESSION['id'] = $row["player_id"];
-                        header("Location: home_page.php");
+                        header("Location: noob_training.php");
                         exit;
                     }
                 } 

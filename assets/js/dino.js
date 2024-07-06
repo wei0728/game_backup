@@ -201,7 +201,7 @@ function playAgain(e){
 function return_score(){
     return score;
 }
-function send_score(){
+/*function send_score(){
     var xhr = new XMLHttpRequest();
         
         // Prepare the data to send
@@ -226,4 +226,24 @@ function send_score(){
         
         // Send the request
         xhr.send(jsonData);
+}*/
+function send_score() {
+    var data = {
+        value: score // Ensure 'score' is defined and holds the value you want to send
+    };
+
+    $.ajax({
+        url: "runner.php", // The server-side script to send data to
+        type: "POST", // Use POST method
+        contentType: "application/json", // Set the content type of the request
+        data: JSON.stringify(data), // Convert data object to JSON string
+        success: function(response) {
+            // This function is called if the request was successful
+            //console.log(response); // Log the response from the server
+        },
+        error: function(xhr, status, error) {
+            // This function is called if an error occurred during the request
+            console.error("Error: " + status + " " + error);
+        }
+    });
 }
