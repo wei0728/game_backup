@@ -15,6 +15,6 @@
             <img id="img1" width="460" height="415" >
             <p id="labelpose" class="label" ></p>
         </div>
-        <script src="/assets/js/noob_training.js"></script>
+        <script src="/assets/js/deep_squat.js"></script>
     </body>
 </html>

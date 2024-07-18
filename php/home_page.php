@@ -15,9 +15,9 @@
         </div>
     </header>
 
-    <div class="all_sketch">
+    <!-- <div class="all_sketch">
         <a href="sketch.php">sketch</a>
-
+        -->
     <!-- 下拉式選單-->
     <div class="list">
         <ul class="drop-down-menu">
@@ -49,7 +49,7 @@
                     </li>
                 </ul>     
             </li>
-            <li><a href="#">選單2</a>
+            <li><a href="page2.php">健身操</a>
             </li>
             <li><a href="#">選單3</a>
             </li>
