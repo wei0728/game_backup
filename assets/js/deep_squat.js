@@ -47,7 +47,7 @@ function draw() {
           }
           else{                            //若沒上鎖則進入
             label_time.innerText="...";
-            if (isJumpingJack(pose)) {
+            if (isSquat(pose)) {
               key=true;
               score++;
               label_score.innerText=score;
@@ -59,7 +59,7 @@ function draw() {
           if(ready&& !working){            //已就緒且未執行，則呼叫一次goClassify()，並由其遞迴自己呼叫
             goClassify();
             working=true;
-            img.src="https://media.gq.com.tw/photos/5dbc4dcb801fc800083f31f3/master/w_1600%2Cc_limit/2018053058351453.jpg";
+            img.src="/assets/img/squat.webp";
             label_pose.innerText = "深蹲";
           }
         }

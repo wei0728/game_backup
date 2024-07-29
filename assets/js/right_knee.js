@@ -47,7 +47,7 @@ function draw() {
           }
           else{                            //若沒上鎖則進入
             label_time.innerText="...";
-            if (isleftelknee(pose)) {
+            if (isrightknee(pose)) {
               key=true;
               score++;
               label_score.innerText=score;
@@ -59,8 +59,8 @@ function draw() {
           if(ready&& !working){            //已就緒且未執行，則呼叫一次goClassify()，並由其遞迴自己呼叫
             goClassify();
             working=true;
-            img.src="https://i.imgur.com/ej5KtJU.jpeg"
-            label_pose.innerText = "左肘碰左膝";
+            img.src="/assets/img/left_ankle_right_knee.jpeg"
+            label_pose.innerText = "左肘碰右膝";
           }
         }
       }else{
@@ -85,12 +85,12 @@ function modelLoaded() {
   }
 }
 
-function isleftelknee(pose){
-  if(                                                       //若左肘與左膝距離<50，且..
-    Math.sqrt(Math.abs(pose.leftKnee.x-pose.leftElbow.x) **2 +       
-    Math.abs(pose.leftKnee.y-pose.leftElbow.y) **2)<50 &&
+function isrightknee(pose){
+  if(                                                       //若左肘與右膝距離<50，且..
+    Math.sqrt(Math.abs(pose.leftKnee.x-pose.rightElbow.x) **2+
+    Math.abs(pose.leftKnee.y-pose.rightElbow.y) **2)<50&&
     pose.keypoints[13].score>0.60&&
-    pose.keypoints[7].score>0.60
+    pose.keypoints[8].score>0.60
     ){
     return true;
   }else return false;

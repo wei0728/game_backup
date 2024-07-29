@@ -3,124 +3,87 @@
 <head>
     <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
     <link rel="stylesheet" href="/assets/css/home_page.css">
-    <title>lobby</title>    
+    <title>lobby</title>
 </head>
+
 <body>
-    <?php session_start()?>
-    <header>    
-        <h1><?php echo "welcome ".$_SESSION['last_name']." ".$_SESSION['first_name']." to our game world"; ?></h1>
+    <?php session_start() ?>
+    <header>
+        <h1><?php echo "welcome " . $_SESSION['last_name'] . " " . $_SESSION['first_name'] . " to our game world"; ?></h1>
         <div class="link">
-            <a href="account_center.php"><?php echo $_SESSION['last_name']." ".$_SESSION['first_name']?></a>
+            <a href="account_center.php"><?php echo $_SESSION['last_name'] . " " . $_SESSION['first_name'] ?></a>
             <a href="login_page.php">logout</a>
         </div>
     </header>
 
-    <!-- <div class="all_sketch">
-        <a href="sketch.php">sketch</a>
-        -->
     <!-- 下拉式選單-->
     <div class="list">
         <ul class="drop-down-menu">
-            <li><a href="home_page.php">遊戲</a>
+            <li><a href="#">遊戲</a>
                 <ul>
-                    <li><a href="#">小恐龍</a>
-                        <ul>
-                            <li><a href="#">遊戲玩法</a>
-                            </li>
-                            <li><a href="#">開始遊戲</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#">貪食蛇</a>
-                        <ul>
-                            <li><a href="#">遊戲玩法</a>
-                            </li>
-                            <li><a href="#">開始遊戲</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#">???</a>
-                        <ul>
-                            <li><a href="#">遊戲玩法</a>
-                            </li>
-                            <li><a href="#">開始遊戲</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>     
+                    <li><a href="runner.php">小恐龍</a></li>
+                    <li><a href="snake.php">貪食蛇</a></li>
+                    <li><a href="classic_game.php">小星星</a></li>
+                </ul>
             </li>
             <li><a href="page2.php">健身操</a>
-            </li>
-            <li><a href="#">選單3</a>
+                <ul>
+                    <li><a href="jump_pack.php">j開合跳</a></li>
+                    <li><a href="deep_squat.php">深蹲</a></li>
+                    <li><a href="left_ankle_left_knee.php">左手肘碰左膝</a></li>
+                    <li><a href="left_ankle_rigjt_knee.php">左手肘碰右膝</a></li>
+                </ul>
             </li>
         </ul>
     </div>
 
     <!--中間-->
-    <div class="advertise"></div>
+    <div class="all">
+        <div class="show_game">
+            <div class="card">
+                <div class="pic">
+                    <a href="jump_ jack.php"><img src="../assets/img/jump_pack.jpeg" , alt="Avatar"></a>
+                </div>
+                <div class="text">
+                    <h3>開合跳</h3>
+                    <p><b>準備姿勢：</b>抬頭挺胸，眼睛直視前方，雙手垂在身體兩側。
+                        <b>起跳：</b>上跳時，雙腳向外張開，雙手高舉過頭到接近頭頂正上方的位置。雙手雙腳打直，膝蓋不彎曲。</p>
+                </div>
+            </div>
 
-<div class="show_game">
-    <div class="card">
-        <div class="pic">
-            <a href="deep_squat.php"><img src="/assets/img/squat.webp", alt = "Avatar"></a>
-        </div>
-        <div class="text">
-            <h3>小恐龍</h3>
-            <p>這是一款經典的跑酷遊戲，藉由操作小恐龍無盡的奔跑，躲避各種障礙，以盡可能的奔跑更長的距離。這款遊戲簡單易上手，較為不同的是，我們以雙手控制取代手指的操作，以此來增加遊戲體驗與更高的挑戰性。</p>
+            <div class="card">
+                <div class="pic">
+                    <a href="deep_squat.php"><img src="../assets/img/squat.webp" , alt="Avatar"></a>
+                </div>
+                <div class="text">
+                    <h3>深蹲</h3>
+                    <p>(1)雙腳分開略寬於臀部。<br>
+                        (2)挺胸，收緊核心，將重心轉移到腳跟上。<br>
+                        (3)慢慢將臀部往下推，直到大腿平行於地板。<br>
+                        (4)過程中，頭部與頸椎呈一直線，不要低頭或者仰頭使力。</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="pic">
+                    <a href="left_ankle_left_knee.php"><img src="../assets/img/left_ankle_left_knee.jpeg" , alt="Avatar"></a>
+                </div>
+                <div class="text">
+                    <h3>左手肘碰左膝</h3>
+                    <p>雙腳打開與肩同寬，身體站直，雙手彎曲手臂放在耳旁或頭部後側，向左外側抬起左邊膝蓋，同時身體傾向左側，盡量讓左膝與左手肘相碰</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="pic">
+                    <a href="left_ankle_right_knee.php"><img src="../assets/img/left_ankle_right_knee.jpeg" , alt="Avatar"></a>
+                </div>
+                <div class="text">
+                    <h3>左手肘碰右膝</h3>
+                    <p>雙腳打開與肩同寬，身體站直，雙手彎曲手臂放在耳旁或頭部後側，向內側前側抬起右邊膝蓋，身體扭轉讓左側手肘與右側膝蓋相碰。
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="card">
-        <div class="pic">
-            <a href="left_ankle_left_knee.php"><img src="/assets/img/left_ankle_left_knee.jpeg", alt = "Avatar"></a>
-        </div>
-        <div class="text">
-            <h3>貪食蛇</h3>
-            <p>這是一款經典的遊戲，玩家操作小蛇，透過吃掉在畫面中的食物增長身體，同時要避免碰到遊戲畫面的邊界。遊戲一開始，小蛇的身體只有一小部分，藉由吃的食物越來越多，小蛇的長度會不斷變長，速度會越來越快，遊戲也會逐漸變困難且極具挑戰性。</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="pic">
-            <a href="left_ankle_right_knee.php"><img src="/assets/img/left_ankle_right_knee.jpeg", alt = "Avatar"></a>
-        </div>
-        <div class="text">
-            <h3>???</h3>
-            <p>遊戲介紹</p>
-        </div>
-    </div>
-</div>
-
-<div class="show_game">
-    <div class="card">
-        <div class="pic">
-            <a href="pose.php"><img src="/assets/img/pose.jpg", alt = "Avatar"></a>
-        </div>
-        <div class="text">
-            <h3>小恐龍</h3>
-            <p>這是一款經典的跑酷遊戲，藉由操作小恐龍無盡的奔跑，躲避各種障礙，以盡可能的奔跑更長的距離。這款遊戲簡單易上手，較為不同的是，我們以雙手控制取代手指的操作，以此來增加遊戲體驗與更高的挑戰性。</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="pic">
-            <a href="jump_pack.php"><img src="/assets/img/jump_pack.jpeg", alt = "Avatar"></a>
-        </div>
-        <div class="text">
-            <h3>貪食蛇</h3>
-            <p>這是一款經典的遊戲，玩家操作小蛇，透過吃掉在畫面中的食物增長身體，同時要避免碰到遊戲畫面的邊界。遊戲一開始，小蛇的身體只有一小部分，藉由吃的食物越來越多，小蛇的長度會不斷變長，速度會越來越快，遊戲也會逐漸變困難且極具挑戰性。</p>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="pic">
-            <img src="/assets/img/dino.png", alt = "Avatar">
-        </div>
-        <div class="text">
-            <h3>???</h3>
-            <p>遊戲介紹</p>
-        </div>
-    </div>
-</div>
-</div>    
 </body>

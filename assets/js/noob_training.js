@@ -34,7 +34,7 @@ function draw() {
   try{
     if(ready){                                             //若模型皆引入完成則進入
       cdtimer++;                                           //每次進入則計數器+1 
-      if(cdtimer>100){                                     //若冷卻達到100則解鎖
+      if(cdtimer>120){                                     //若冷卻達到100則解鎖
         lock=false; 
       }
       const logits=features.infer(video);
@@ -51,35 +51,35 @@ function draw() {
             case 0:
               if (isJumpingJack(pose)) {           //若正確則給鑰匙並下一題
                 key=true;
-                img.src="https://media.gq.com.tw/photos/5dbc4dcb801fc800083f31f3/master/w_1600%2Cc_limit/2018053058351453.jpg";
+                img.src="/assets/img/squat.webp";
                 label_pose.innerText = "深蹲";
               }
               break;
             case 1:
               if (isSquat(pose)) {
                 key=true;
-                img.src="https://i.imgur.com/ej5KtJU.jpeg"
+                img.src="/assets/img/left_ankle_left_knee.jpeg"
                 label_pose.innerText = "左肘碰左膝";
               }
               break;
             case 2:
               if (isleftelknee(pose)) {
                 key=true;
-                img.src="https://i.imgur.com/LyekhyO.jpeg"
-                label_pose.innerText = "左肘碰右膝";
+                img.src="/assets/img/sidebend.jpeg"
+                label_pose.innerText = "站姿側曲";
               }
               break;
             case 3:
-              if (isrigelknee(pose)) {
+              if (isSideBend(pose)) {
                 key=true;
-                img.src="https://i1.kknews.cc/02oaFIm9rLZMyPiWT0HjzO-te6bhaZr7KfwibMc/0.jpg"
+                img.src="/assets/img/pose.jpg"
                 label_pose.innerText = "回到原位";
               }
               break;
             case 4:
               if (isdd(pose)) {
                 key=true;
-                 img.src="https://p0.itc.cn/q_70/images03/20220710/5a95c6e2c4f04d9e923ea7617ef00513.jpeg"
+                 img.src="/assets/img/jump_pack.jpeg"
                 label_pose.innerText = "開合跳";
               }
               break;
@@ -106,6 +106,8 @@ function draw() {
           label_pose.innerText = "開合跳";
         }
       }
+    }else{
+      label_pose.innerText ="Loading...";
     }
   }catch(e){
     console.log(e);
@@ -157,12 +159,14 @@ function isleftelknee(pose){
   }else return false;
 }
 
-function isrigelknee(pose){
-  if(                                                       //若左肘與右膝距離<50，且..
-    Math.sqrt(Math.abs(pose.leftKnee.x-pose.rightElbow.x) **2+
-    Math.abs(pose.leftKnee.y-pose.rightElbow.y) **2)<50&&
-    pose.keypoints[13].score>0.60&&
-    pose.keypoints[8].score>0.60
+function isSideBend(pose){
+  if(                                                       //左肘高於鼻、左肩高於右肩，且..
+    pose.leftElbow.y<pose.nose.y&&
+    pose.leftShoulder.y<pose.rightShoulder.y&&
+    pose.keypoints[7].score>0.40&&
+    pose.keypoints[0].score>0.40&&    
+    pose.keypoints[5].score>0.40&&
+    pose.keypoints[6].score>0.40
     ){
     return true;
   }else return false;
@@ -204,5 +208,6 @@ function posematch(mode){                         //根據題號與畫面，訓�
   models+=1;
   if(models==20){
     knn.save("model.json");
+    location.href="home_page.php";
   }
 }

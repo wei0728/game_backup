@@ -47,7 +47,7 @@ function draw() {
           }
           else{                            //若沒上鎖則進入
             label_time.innerText="...";
-            if (isleftknee(pose)) {
+            if (isSideBend(pose)) {
               key=true;
               score++;
               label_score.innerText=score;
@@ -59,8 +59,8 @@ function draw() {
           if(ready&& !working){            //已就緒且未執行，則呼叫一次goClassify()，並由其遞迴自己呼叫
             goClassify();
             working=true;
-            img.src="/assets/img/left_ankle_left_knee.jpeg"
-            label_pose.innerText = "左肘碰左膝";
+            img.src="/assets/img/sidebend.jpeg"
+            label_pose.innerText = "站姿側曲";
           }
         }
       }else{
@@ -85,12 +85,14 @@ function modelLoaded() {
   }
 }
 
-function isleftknee(pose){
-  if(                                                       //若左肘與左膝距離<50，且..
-    Math.sqrt(Math.abs(pose.leftKnee.x-pose.leftElbow.x) **2 +       
-    Math.abs(pose.leftKnee.y-pose.leftElbow.y) **2)<50 &&
-    pose.keypoints[13].score>0.60&&
-    pose.keypoints[7].score>0.60
+function isSideBend(pose){
+  if(                                                       //左肘高於鼻、左肩高於右肩，且..
+    pose.leftElbow.y<pose.nose.y&&
+    pose.leftShoulder.y<pose.rightShoulder.y&&
+    pose.keypoints[7].score>0.40&&
+    pose.keypoints[0].score>0.40&&    
+    pose.keypoints[5].score>0.40&&
+    pose.keypoints[6].score>0.40
     ){
     return true;
   }else return false;

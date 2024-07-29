@@ -59,7 +59,7 @@ function draw() {
           if(ready&& !working){            //已就緒且未執行，則呼叫一次goClassify()，並由其遞迴自己呼叫
             goClassify();
             working=true;
-            img.src="https://p0.itc.cn/q_70/images03/20220710/5a95c6e2c4f04d9e923ea7617ef00513.jpeg"
+            img.src="/assets/img/jump_pack.jpeg"
             label_pose.innerText = "開合跳";
           }
         }
