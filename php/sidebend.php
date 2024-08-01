@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel=stylesheet type="text/css" href="/assets/css/noob_training.css">
+        <link rel=stylesheet type="text/css" href="../assets/css/noob_training.css">
         <script src="//cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
         <script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
@@ -15,6 +15,6 @@
             <img id="img1" width="460" height="415" >
             <p id="labelpose" class="label" ></p>
         </div>
-        <script src="/assets/js/sidebend.js"></script>
+        <script src="../assets/js/sidebend.js"></script>
     </body>
 </html>

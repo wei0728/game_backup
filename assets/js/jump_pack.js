@@ -59,12 +59,16 @@ function draw() {
           if(ready&& !working){            //已就緒且未執行，則呼叫一次goClassify()，並由其遞迴自己呼叫
             goClassify();
             working=true;
-            img.src="/assets/img/jump_pack.jpeg"
+            img.src="../assets/img/jump_pack.jpeg";
             label_pose.innerText = "開合跳";
           }
         }
       }else{
-        alert(score);
+        document.cookie = "pose=";
+        document.cookie = "pose = jump_pack";
+        //setCookie('sport', 'jump_pack', 7);
+        //window.sessionStorage.setItem('sport', sport);
+        location.href = "result.php";     
       }
     }
   }catch(e){

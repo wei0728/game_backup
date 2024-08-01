@@ -59,12 +59,16 @@ function draw() {
           if(ready&& !working){            //已就緒且未執行，則呼叫一次goClassify()，並由其遞迴自己呼叫
             goClassify();
             working=true;
-            img.src="/assets/img/sidebend.jpeg"
+            img.src="../assets/img/sidebend.jpeg"
             label_pose.innerText = "站姿側曲";
           }
         }
       }else{
-        alert(score);
+        document.cookie = "pose=";
+        document.cookie = "pose = sidebend";
+        //setCookie('sport', 'jump_pack', 7);
+        //window.sessionStorage.setItem('sport', sport);
+        location.href = "result.php";     
       }
     }
   }catch(e){

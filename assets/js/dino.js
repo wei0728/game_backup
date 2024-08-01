@@ -63,16 +63,16 @@ window.onload = function(){
     //context.fillStyle = 'green';
     //context.fillRect(dino.x, dino.y, dino.width, dino.height);
     dinoImg = new Image();
-    dinoImg.src = "/assets/img/dino.png";
+    dinoImg.src = "../assets/img/dino.png";
     dinoImg.onload = function(){
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
     }
     cactus1Img = new Image();
-    cactus1Img.src = "/assets/img/cactus1.png";
+    cactus1Img.src = "../assets/img/cactus1.png";
     cactus2Img = new Image();
-    cactus2Img.src = "/assets/img/cactus2.png";
+    cactus2Img.src = "../assets/img/cactus2.png";
     cactus3Img = new Image();
-    cactus3Img.src = "/assets/img/cactus3.png";
+    cactus3Img.src = "../assets/img/cactus3.png";
     setTimeout(function(){   
       requestAnimationFrame(update);
       document.addEventListener("keydown", moveDino);
@@ -110,7 +110,7 @@ function update(){
 
         if (detectCollision(dino, cactus)){
             gameOver = true;
-            dinoImg.src = "/assets/img/dino-dead.png";
+            dinoImg.src = "../assets/img/dino-dead.png";
             dinoImg.onload = function(){
                 context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
             }

@@ -23,12 +23,12 @@ var game = new Phaser.Game(config);
 
 function preload (){
   try{
-    this.load.image('sky', '/assets/img/sky.png');
-    this.load.image('ground', '/assets/img/platform.png');
-    this.load.image('star', '/assets/img/star.png');
-    this.load.image('bomb', '/assets/img/bomb.png');
+    this.load.image('sky', '../assets/img/sky.png');
+    this.load.image('ground', '../assets/img/platform.png');
+    this.load.image('star', '../assets/img/star.png');
+    this.load.image('bomb', '../assets/img/bomb.png');
     this.load.spritesheet(
-      'dude','/assets/img/dude.png',{ frameWidth: 32, frameHeight: 48 } );
+      'dude','../assets/img/dude.png',{ frameWidth: 32, frameHeight: 48 } );
   }catch(e){console.log(e);}
 }
     

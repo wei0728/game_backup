@@ -1,14 +1,14 @@
 <html>
     <head>
         <title>login Page</title>
-        <link rel="stylesheet" href="/assets/css/login_page.css">
+        <link rel="stylesheet" href="../assets/css/login_page.css">
     </head>
     <body>
         <center><h1>Login Form</h1></center>
         <form action="#" method="post">
             <center><div class="container">
                 <div class="imgcontainer">
-                    <img src="/assets/img/avatar_img1.jpg" alt="Avatar" class="avatar">
+                    <img src="../assets/img/avatar_img1.jpg" alt="Avatar" class="avatar">
                 </div>
                 <label for ='account'><b>Player account :  </b></label>
                 <input type="text" placeholder="Enter account" name="account" float="right"  required><br>  

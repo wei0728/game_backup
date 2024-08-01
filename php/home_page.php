@@ -2,7 +2,7 @@
 
 <head>
     <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-    <link rel="stylesheet" href="/assets/css/home_page.css">
+    <link rel="stylesheet" href="../assets/css/home_page.css">
     <title>lobby</title>
 </head>
 

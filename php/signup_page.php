@@ -2,14 +2,14 @@
     <head>
         <title>Signup Page</title>
         
-        <link rel="stylesheet" href="/assets/css/signup_page.css">
+        <link rel="stylesheet" href="../assets/css/signup_page.css">
     </head>
     <body>
         <center><h1>Register From</h1></center>
         <form action="#" method="post">
             <center><div class="container">
                 <div class="imgcontainer">
-                    <img src="/assets/img/avatar_img2.png" alt="Avatar" class="avatar">
+                    <img src="../assets/img/avatar_img2.png" alt="Avatar" class="avatar">
                 </div>
                 <label for='first_name'><b>First Name : </b></label>
 		        <input type='text' placeholder="Enter your first name" name='first_name' required><br>

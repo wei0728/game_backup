@@ -4,9 +4,9 @@
         <title>dino runner</title>   
         <script scr = "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
-        <link rel="stylesheet" href="/assets/css/dino.css">
-        <script src="/assets/js/dino.js"></script>        
-        <script src="/assets/model.json" id="model"></script> 
+        <link rel="stylesheet" href="../assets/css/dino.css">
+        <script src="../assets/js/dino.js"></script>        
+        <script src="../assets/model.json" id="model"></script> 
         <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
     </head>

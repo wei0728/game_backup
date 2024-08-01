@@ -2,7 +2,7 @@
 
 <head>
     <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-    <link rel="stylesheet" href="/assets/css/home_page.css">
+    <link rel="stylesheet" href="../assets/css/home_page.css">
     <title>lobby</title>
 </head>
 
@@ -42,7 +42,7 @@
         <div class="show_game">
             <div class="card">
                 <div class="pic">
-                    <a href="jump_ jack.php"><img src="../assets/img/jump_pack.jpeg" , alt="Avatar"></a>
+                    <a href="jump_pack.php"><img src="../assets/img/jump_pack.jpeg" , alt="Avatar"></a>
                 </div>
                 <div class="text">
                     <h3>開合跳</h3>
@@ -76,7 +76,7 @@
 
             <div class="card">
                 <div class="pic">
-                    <a href="left_ankle_right_knee.php"><img src="../assets/img/left_ankle_right_knee.jpeg" , alt="Avatar"></a>
+                    <a href="sidebend.php"><img src="../assets/img/sidebend.jpeg" , alt="Avatar"></a>
                 </div>
                 <div class="text">
                     <h3>左手肘碰右膝</h3>

@@ -51,35 +51,35 @@ function draw() {
             case 0:
               if (isJumpingJack(pose)) {           //若正確則給鑰匙並下一題
                 key=true;
-                img.src="/assets/img/squat.webp";
+                img.src="../assets/img/squat.webp";
                 label_pose.innerText = "深蹲";
               }
               break;
             case 1:
               if (isSquat(pose)) {
                 key=true;
-                img.src="/assets/img/left_ankle_left_knee.jpeg"
+                img.src="../assets/img/left_ankle_left_knee.jpeg"
                 label_pose.innerText = "左肘碰左膝";
               }
               break;
             case 2:
               if (isleftelknee(pose)) {
                 key=true;
-                img.src="/assets/img/sidebend.jpeg"
+                img.src="../assets/img/sidebend.jpeg"
                 label_pose.innerText = "站姿側曲";
               }
               break;
             case 3:
               if (isSideBend(pose)) {
                 key=true;
-                img.src="/assets/img/pose.jpg"
+                img.src="../assets/img/pose.jpg"
                 label_pose.innerText = "回到原位";
               }
               break;
             case 4:
               if (isdd(pose)) {
                 key=true;
-                 img.src="/assets/img/jump_pack.jpeg"
+                 img.src="../assets/img/jump_pack.jpeg"
                 label_pose.innerText = "開合跳";
               }
               break;

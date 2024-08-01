@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/assets/css/account_center.css">
+        <link rel="stylesheet" href="../assets/css/account_center.css">
         <title>account center</title>    
     </head>   
     <body>

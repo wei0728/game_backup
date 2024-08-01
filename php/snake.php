@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="../assets/css/style.css">
         <title>Document</title>
     </head>
     <body>
@@ -14,6 +14,6 @@
         <button id="startButton">开始</button>
         <button id="stopButton">停止</button>
         <h2>使用上下左右來控制！</h2>
-        <script src="/assets/js/app.js"></script>
+        <script src="../assets/js/app.js"></script>
     </body>
 </html>
