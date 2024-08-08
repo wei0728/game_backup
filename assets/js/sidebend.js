@@ -66,6 +66,7 @@ function draw() {
       }else{
         document.cookie = "pose=";
         document.cookie = "pose = sidebend";
+        document.cookie = "score = ";
         document.cookie = "score = "+score;
         //setCookie('sport', 'jump_pack', 7);
         //window.sessionStorage.setItem('sport', sport);

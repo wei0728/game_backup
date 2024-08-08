@@ -25,25 +25,21 @@
             $value = $data['value'];
             session_start();                
             $id = $_SESSION['id'];
-            $server_name = '127.0.0.1:3306';
-            $username = 'root';
-            $password = '12345678';
-            $dbname = 'project';
             $Connect = new Connect();
             $Connect->sql_setup();
-            if (!$conn){
+            if (!$Connect->connect_success()){
                 die("Connection failed: " . mysqli_connect_error());
             }
             $sql = "select * from aerobics where player_id = '$id'";                    
-            $result = mysqli_query($conn, $sql);
+            $result = $Connect->sql_command($sql);
             if (mysqli_num_rows($result) > 0) {     
                 // output data of each row
-                $sql = "update aerobics set deep_squat = $value where player_id = $id";
-                mysqli_query($conn, $sql);
+                $sql = "update aerobics set deep_squat = $value where player_id = '$id'";
+                $Connect->sql_command($sql);
             }
             else {
                 $sql = "insert into aerobics (player_id, deep_squat) Values ('$id',  $value)";
-                mysqli_query($conn, $sql);
+                $Connect->sql_command($sql);
             }
 
         } else {

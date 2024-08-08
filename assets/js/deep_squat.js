@@ -64,8 +64,9 @@ function draw() {
           }
         }
       }else{
-        document.cookie = "pose=";
+        document.cookie = "pose = ";
         document.cookie = "pose = deep_squat";
+        document.cookie = "score = ";
         document.cookie = "score = "+score;
         send_score("deep_squat.php");
         //setCookie('sport', 'jump_pack', 7);

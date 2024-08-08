@@ -66,6 +66,7 @@ function draw() {
       }else{
         document.cookie = "pose=";
         document.cookie = "pose = left_ankle_left_knee";
+        document.cookie = "score = ";
         document.cookie = "score = "+score;
         send_score("left_ankle_left_knee.php");
         //setCookie('sport', 'jump_pack', 7);

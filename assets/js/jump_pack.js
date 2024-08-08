@@ -64,8 +64,9 @@ function draw() {
           }
         }
       }else{
-        document.cookie = "pose=";
+        document.cookie = "pose = ";
         document.cookie = "pose = jump_pack";
+        document.cookie = "score = ";
         document.cookie = "score = "+score;
         send_score("jump_pack.php");
         //setCookie('sport', 'jump_pack', 7);
