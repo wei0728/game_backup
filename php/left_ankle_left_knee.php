@@ -16,5 +16,40 @@
             <p id="labelpose" class="label" >loading...</p>
         </div>
         <script src="../assets/js/left_knee.js"></script>
+        <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Get the JSON data sent from the client
+                $json_data = file_get_contents("php://input");
+                
+                $data = json_decode($json_data, true);
+                $value = $data['value'];
+                session_start();
+                $server_name = '127.0.0.1:3306';
+                $username = 'root';
+                $password = '12345678';
+                $dbname = 'project';
+                $conn = mysqli_connect($server_name, $username, $password, $dbname);
+                if (!$conn){
+                    die("Connection failed: " . mysqli_connect_error());
+                }
+                $id = $_SESSION['id'];               
+                $sql = "select * from aerobics where player_id = '$id'";                    
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0) {     
+                    // output data of each row
+                    $sql = "update aerobics set left_ankle_left_knee = $value where player_id = $id";
+                    mysqli_query($conn, $sql);
+                }
+                else {
+                    $sql = "insert into aerobics (player_id, left_ankle_left_knee) Values ('$id', $value)";
+                    mysqli_query($conn, $sql);
+                }
+                
+            } else {
+                http_response_code(405); // Method Not Allowed
+                echo "<script>console.log('Only POST requests are allowed')</>";
+                //echo "Only POST requests are allowed";
+            }
+        ?>
     </body>
 </html>

@@ -19,7 +19,7 @@
     <!-- 下拉式選單-->
     <div class="list">
         <ul class="drop-down-menu">
-            <li><a href="#">遊戲</a>
+            <li><a href="home_page.php">遊戲</a>
                 <ul>
                     <li><a href="runner.php">小恐龍</a></li>
                     <li><a href="snake.php">貪食蛇</a></li>

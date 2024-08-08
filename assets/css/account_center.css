@@ -70,9 +70,29 @@ div{
 .flex{
     display : flex;
 }
-button{
-    background: pink;
-    size : 40px;
-    border : 0;
-    padding : 0px;
+.button-container {
+    display: flex;
+    justify-content: flex-start; /* 將按鈕置左 */
+    gap: 0; /* 消除間隔 */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-top: 2px solid black; /* 上邊框 */
+    border-bottom: 2px solid black; /* 下邊框 */
+    background-color: white;  /* 設定背景顏色為白色 */
+}
+
+button:first-child {
+    border-left: 2px solid black; /* 第一個按鈕有左邊框 */
+}
+
+button:last-child {
+    border-right: 2px solid black; /* 最後一個按鈕有右邊框 */
+}
+
+button:not(:first-child) {
+    border-left: 1px solid black; /* 中間按鈕的左邊框較細 */
 }

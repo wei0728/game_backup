@@ -66,9 +66,11 @@ function draw() {
       }else{
         document.cookie = "pose=";
         document.cookie = "pose = jump_pack";
+        document.cookie = "score = "+score;
+        send_score("jump_pack.php");
         //setCookie('sport', 'jump_pack', 7);
         //window.sessionStorage.setItem('sport', sport);
-        location.href = "result.php";     
+    
       }
     }
   }catch(e){
@@ -114,3 +116,32 @@ function goClassify(){
     console.log(e);
   }
 }
+
+function send_score(url){
+  var xhr = new XMLHttpRequest();
+      
+      // Prepare the data to send
+      var data = {
+          value: score // Change 'Your value here' to the value you want to send
+      };
+      
+      // Convert the data to a JSON string
+      var jsonData = JSON.stringify(data);
+      
+      // Set up the AJAX request
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      
+      // Define what happens on successful data submission
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            location.href = "result.php";   
+            // Request was successful
+              //console.log(xhr.responseText); // Log the response from the server
+          }
+      };
+      
+      // Send the request
+      xhr.send(jsonData);
+}
+

@@ -83,7 +83,7 @@ window.onload = function(){
 //keyPressed();
 function update(){
     if (gameOver==true){    
-        send_score();
+        send_score("runner.php");
         return ;
     }
     console.log(handstate);
@@ -201,7 +201,7 @@ function playAgain(e){
 function return_score(){
     return score;
 }
-/*function send_score(){
+function send_score(url){
     var xhr = new XMLHttpRequest();
         
         // Prepare the data to send
@@ -213,7 +213,7 @@ function return_score(){
         var jsonData = JSON.stringify(data);
         
         // Set up the AJAX request
-        xhr.open("POST", "runner.php", true);
+        xhr.open("POST", url, true);
         xhr.setRequestHeader("Content-Type", "application/json");
         
         // Define what happens on successful data submission
@@ -226,8 +226,8 @@ function return_score(){
         
         // Send the request
         xhr.send(jsonData);
-}*/
-function send_score() {
+}
+/*function send_score() {
     var data = {
         value: score // Ensure 'score' is defined and holds the value you want to send
     };
@@ -239,11 +239,11 @@ function send_score() {
         data: JSON.stringify(data), // Convert data object to JSON string
         success: function(response) {
             // This function is called if the request was successful
-            //console.log(response); // Log the response from the server
+            console.log(response); // Log the response from the server
         },
         error: function(xhr, status, error) {
             // This function is called if an error occurred during the request
             console.error("Error: " + status + " " + error);
         }
     });
-}
+}*/

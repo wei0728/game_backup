@@ -23,7 +23,6 @@
                 $json_data = file_get_contents("php://input");
                 
                 $data = json_decode($json_data, true);
-                
                 $value = $data['value'];
                 session_start();
                 $server_name = '127.0.0.1:3306';
