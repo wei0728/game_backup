@@ -4,10 +4,17 @@
     <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
     <link rel="stylesheet" href="../assets/css/home_page.css">
     <title>lobby</title>
+    <?php
+        session_start();
+        $_SESSION['account'] = 'wei';
+        $_SESSION['password'] = 12345678;
+        $_SESSION['last_name'] = 'huang';
+        $_SESSION['first_name'] = 'wei';
+        $_SESSION['id'] = '91';
+    ?>
 </head>
 
 <body>
-    <?php session_start() ?>
     <header>
         <h1><?php echo "welcome " . $_SESSION['last_name'] . " " . $_SESSION['first_name'] . " to our game world"; ?></h1>
         <div class="link">
@@ -31,7 +38,7 @@
                     <li><a href="jump_pack.php">開合跳</a></li>
                     <li><a href="deep_squat.php">深蹲</a></li>
                     <li><a href="left_ankle_left_knee.php">左手肘碰左膝</a></li>
-                    <li><a href="left_ankle_rigjt_knee.php">左手肘碰右膝</a></li>
+                    <li><a href="sidebend.php">側身伸展</a></li>
                 </ul>
             </li>
         </ul>

@@ -3,6 +3,7 @@
 <head>
     <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
     <link rel="stylesheet" href="../assets/css/home_page.css">
+    <script src = "../assets/js/choose_mode.js"></script>
     <title>lobby</title>
 </head>
 
@@ -28,10 +29,11 @@
             </li>
             <li><a href="page2.php">健身操</a>
                 <ul>
-                    <li><a href="jump_pack.php">j開合跳</a></li>
-                    <li><a href="deep_squat.php">深蹲</a></li>
-                    <li><a href="left_ankle_left_knee.php">左手肘碰左膝</a></li>
-                    <li><a href="left_ankle_rigjt_knee.php">左手肘碰右膝</a></li>
+                    <li><a onclick="sendGet('jump_pack')">開合跳</a></li>
+                    <li><a onclick="sendGet('deep_squat')">深蹲</a></li>
+                    <li><a onclick="sendGet('deep_squat')">左手肘碰左膝</a></li>  
+                    <li><a onclick="sendGet('frontbend')">側身伸展</a></li>
+
                 </ul>
             </li>
         </ul>
@@ -42,7 +44,7 @@
         <div class="show_game">
             <div class="card">
                 <div class="pic">
-                    <a href="jump_pack.php"><img src="../assets/img/jump_pack.jpeg" , alt="Avatar"></a>
+                <div onclick="sendGet('jump_pack')"><img src="../assets/img/jump_pack.jpeg" , alt="Avatar"></div>
                 </div>
                 <div class="text">
                     <h3>開合跳</h3>
@@ -53,7 +55,7 @@
 
             <div class="card">
                 <div class="pic">
-                    <a href="deep_squat.php"><img src="../assets/img/squat.webp" , alt="Avatar"></a>
+                    <div onclick="sendGet('deep_squat')"><img src="../assets/img/squat.webp" , alt="Avatar"></div>
                 </div>
                 <div class="text">
                     <h3>深蹲</h3>
@@ -66,21 +68,22 @@
 
             <div class="card">
                 <div class="pic">
-                    <a href="left_ankle_left_knee.php"><img src="../assets/img/left_ankle_left_knee.jpeg" , alt="Avatar"></a>
+                    <div  onclick="sendGet('sidebend')"><img src="../assets/img/sidebend.jpeg" , alt="Avatar"></div>
                 </div>
                 <div class="text">
-                    <h3>左手肘碰左膝</h3>
-                    <p>雙腳打開與肩同寬，身體站直，雙手彎曲手臂放在耳旁或頭部後側，向左外側抬起左邊膝蓋，同時身體傾向左側，盡量讓左膝與左手肘相碰</p>
+                    <h3>側身伸展</h3>
+                    <p>側身伸展從站立姿勢開始，舉起一隻手臂過頭頂，慢慢向對側彎曲。保持上半身在同一平面內，感受側腰伸展，然後回到起始位置並換邊重複。
+                    </p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="pic">
-                    <a href="sidebend.php"><img src="../assets/img/sidebend.jpeg" , alt="Avatar"></a>
+                    <div  onclick="sendGet('frontbend')"><img src="../assets/img/frontbend.jpg" , alt="Avatar"></div>
                 </div>
                 <div class="text">
-                    <h3>左手肘碰右膝</h3>
-                    <p>雙腳打開與肩同寬，身體站直，雙手彎曲手臂放在耳旁或頭部後側，向內側前側抬起右邊膝蓋，身體扭轉讓左側手肘與右側膝蓋相碰。
+                    <h3>側身伸展</h3>
+                    <p>側身伸展從站立姿勢開始，舉起一隻手臂過頭頂，慢慢向對側彎曲。保持上半身在同一平面內，感受側腰伸展，然後回到起始位置並換邊重複。
                     </p>
                 </div>
             </div>

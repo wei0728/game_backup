@@ -1,0 +1,28 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.square {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #000;
+    font-size: 36px;
+}
+
+.square:nth-child(1) {
+    background-color: #ADD8E6;
+}
+
+.square:nth-child(2) {
+    background-color: #90EE90;
+}

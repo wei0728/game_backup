@@ -4,11 +4,15 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: #f5f6fa;
 }
 #container {
     display: flex;
     width: 80%;
-    height: 60%;  /* 增加容器的高度以適應標籤 */
+    height: 80%;  /* 增加容器的高度以適應標籤 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
 }
 #img-container {
     flex: 1;
@@ -41,12 +45,47 @@ body {
     flex-direction: column;
     padding: 20px;
 }
-.comment1, .comment2, .comment3{
-    margin: 10px;
-    padding: 5px;
-    border: 1px solid gray;
-    border-radius: 5px;
+.comment1, .comment2, .comment3, .comment4, .comment5{
+    margin: 10px 0;          /* 上下邊距 */
+    padding: 10px;           /* 內邊距 */
+    border: 1px solid gray;  /* 邊框 */
+    border-radius: 5px;      /* 圓角 */
+    width: 90%;              /* 統一寬度 */
+    box-sizing: border-box;  /* 包括內邊距和邊框在內 */
+    /* 可選：如果需要固定高度，可以添加 */
+    /* height: 100px; */
 }
+
+/* 如果需要高亮效果，保留原有的 .highlight 類別 */
 .highlight {
     background-color: #f1c40f;  /* 高亮顏色 */
+}
+
+#pose-name{
+    display: flex;
+}
+
+#flex {
+    display: flex;
+}
+
+canvas {
+display: none; /* 初始隐藏画布，动画触发时显示 */
+position: fixed;
+top: 0;
+left: 0;
+pointer-events: none; /* 让画布不阻挡页面上的其他元素 */
+}
+/* 可选：样式按钮 */
+#confettiButton {
+position: fixed;
+top: 20px;
+left: 20px;
+z-index: 1000;
+padding: 10px 20px;
+background-color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
 }

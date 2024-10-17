@@ -12,8 +12,11 @@
             $this->sql_setup();
             return $this->connect_success;
         } 
-        function sql_command($commend){
-            return mysqli_query($this->connect_success, $commend);
+        function sql_command($command){
+            return mysqli_query($this->connect_success, $command);
+        }
+        function sql_search($command, $pose){
+            return mysqli_fetch_assoc(mysqli_query($this->connect_success, $command))[$pose];
         }
     }
 ?>

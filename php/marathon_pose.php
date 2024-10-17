@@ -14,7 +14,8 @@
             <p id="labelscore" class="label" style="color:red"></p>
             <img id="img1" width="460" height="415" >
             <p id="labelpose" class="label" >loading...</p>
+            <button onclick="showAlert()">結束</button>
         </div>
-        <script src="../assets/js/right_knee.js"></script>
+        <script src="../assets/js/get_marathon_pose.js"></script>
     </body>
 </html>
