@@ -1,28 +1,37 @@
-<html>
-    <head>
-        <title>Signup Page</title>
-        
-        <link rel="stylesheet" href="../assets/css/signup_page.css">
-    </head>
-    <body>
-        <center><h1>Register From</h1></center>
-        <form action="#" method="post">
-            <center><div class="container">
-                <div class="imgcontainer">
-                    <img src="../assets/img/avatar_img2.png" alt="Avatar" class="avatar">
-                </div>
-                <label for='first_name'><b>First Name : </b></label>
-		        <input type='text' placeholder="Enter your first name" name='first_name' required><br>
-		        <label for='last_name'><b>Last Name :</b></label>
-		        <input type='text' placeholder='Enter your last name' name='last_name' required><br>
-            	<label for ='account'><b>account :  </b></label>
-            	<input type="text" placeholder="Enter account" name="account" float="right"  required><br>  
-            	<label for='password'><b>Password : </b></label>
-            	<input type="password" placeholder="Enter Password" name="password" required><br>  
-            	<button type="submit"><b>Signup</b></button><br>
-                Already an accounct <a href="login_page.php"> Login </a>
-            </div></center>
-        </form>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="utf-8" />
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="../assets/css/signup_page.css">
+</head>
+<body>
+    <form action="#" method="post">
+        <div class="container">
+            <div class="imgcontainer">
+                <img src="../assets/img/avatar_img2.png" alt="Avatar" class="avatar">
+            </div>
+            <h1>Register Form</h1>
+            
+            <label for="first_name"><b>First Name:</b></label>
+            <input type="text" placeholder="Enter your first name" name="first_name" id="first_name" required>
+            
+            <label for="last_name"><b>Last Name:</b></label>
+            <input type="text" placeholder="Enter your last name" name="last_name" id="last_name" required>
+            
+            <label for="account"><b>Account:</b></label>
+            <input type="text" placeholder="Enter account" name="account" id="account" required>
+            
+            <label for="password"><b>Password:</b></label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+            
+            <button type="submit"><b>Signup</b></button>
+            
+            <div class="scale">                
+                Already have an account? <a href="login_page.php">Login</a>
+            </div>
+        </div>
+    </form>
         <?php
             if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 $server_name = '127.0.0.1:3306';

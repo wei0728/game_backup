@@ -12,7 +12,7 @@
         <div class="iframe-container">
             <p id="labeltime" class="label" ></p>
             <p id="labelscore" class="label" style="color:red"></p>
-            <img id="img1" width="460" height="415" >
+            <img id="img1">
             <p id="labelpose" class="label" >loading...</p>
             <button onclick="showAlert()">結束</button>
         </div>

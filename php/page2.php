@@ -31,8 +31,8 @@
                 <ul>
                     <li><a onclick="sendGet('jump_pack')">開合跳</a></li>
                     <li><a onclick="sendGet('deep_squat')">深蹲</a></li>
-                    <li><a onclick="sendGet('deep_squat')">左手肘碰左膝</a></li>  
-                    <li><a onclick="sendGet('frontbend')">側身伸展</a></li>
+                    <li><a onclick="sendGet('deep_squat')">側身伸展</a></li>  
+                    <li><a onclick="sendGet('frontbend')">站姿前驅</a></li>
 
                 </ul>
             </li>
@@ -82,8 +82,8 @@
                     <div  onclick="sendGet('frontbend')"><img src="../assets/img/frontbend.jpg" , alt="Avatar"></div>
                 </div>
                 <div class="text">
-                    <h3>側身伸展</h3>
-                    <p>側身伸展從站立姿勢開始，舉起一隻手臂過頭頂，慢慢向對側彎曲。保持上半身在同一平面內，感受側腰伸展，然後回到起始位置並換邊重複。
+                    <h3>站姿前驅</h3>
+                    <p>前彎是一種基本且有效的伸展運動，廣泛應用於瑜伽、普拉提及各種健身訓練中。這個動作主要針對下背部、臀部、大腿後側肌群及脊椎的柔韌性，能夠促進血液循環、緩解壓力並提升整體身體的靈活性。
                     </p>
                 </div>
             </div>

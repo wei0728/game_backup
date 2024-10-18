@@ -6,11 +6,6 @@
     <title>lobby</title>
     <?php
         session_start();
-        $_SESSION['account'] = 'wei';
-        $_SESSION['password'] = 12345678;
-        $_SESSION['last_name'] = 'huang';
-        $_SESSION['first_name'] = 'wei';
-        $_SESSION['id'] = '91';
     ?>
 </head>
 

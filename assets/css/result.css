@@ -1,31 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f5f6fa;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); /* 藍色漸變背景 */
+    font-family: Arial, sans-serif;
+    color: #000000;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
 }
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+body::before {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: -150px;
+}
+
+body::after {
+    width: 200px;
+    height: 200px;
+    bottom: -100px;
+    right: -100px;
+}
+
 #container {
     display: flex;
-    width: 80%;
-    height: 80%;  /* 增加容器的高度以適應標籤 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-
+    flex-direction: row; /* 左右佈局 */
+    background: rgba(0, 0, 0, 0.6); /* 半透明黑色背景 */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    width: 90%;
+    height : 80%;
+    gap: 20px; /* 內部元素間距 */
+    align-items: center; /* 垂直居中對齊 */
+    justify-content: center;
+    
 }
+/* 按鈕共用樣式 */
+#play-again, #go-to-home_page {
+    width: 200px; /* 按鈕寬度 */
+    background-color: #4facfe;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 10px 0 10px; /* 上方留空間 */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#play-again:hover, #go-to-home_page:hover {
+    background-color: #00f2fe;
+    transform: scale(1.05);
+}
+
+#play-again:active, #go-to-home_page:active {
+    transform: scale(1);
+    background-color: #00f2fe;
+}
+
+#play-again:focus, #go-to-home_page:focus{
+    outline: 2px solid #00f2fe;
+}
+
+
 #img-container {
     flex: 1;
-    background: #f0f0f0;
+    background: #e8f6ff; /* 淺藍色背景 */
     display: flex;
-    flex-direction: column;  /* 使內部元素垂直排列 */
+    flex-direction: column; /* 內部元素垂直排列 */
     align-items: center;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height: 90%;
 }
 #img-container img {
-    width: 90%;
+    width: auto;
     height: auto;
-    max-height: 85%;  /* 限制圖片最大高度，留出空間給標籤 */
+    border-radius: 10px;
+    max-width: 100%; /* 限制圖片最大高度 */
+    max-height: 90%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 #label {
     margin: 10px 0;  /* 上下邊距 */
@@ -38,15 +114,20 @@ body {
 }
 #comments {
     flex: 1;
-    background: #dfe4ea;
+    background: #e8f6ff; /* 淺灰色背景 */
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     padding: 20px;
+    max-width: 50%;
+    height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .comment1, .comment2, .comment3, .comment4, .comment5{
-    margin: 10px 0;          /* 上下邊距 */
+    margin: 1px 0;          /* 上下邊距 */
     padding: 10px;           /* 內邊距 */
     border: 1px solid gray;  /* 邊框 */
     border-radius: 5px;      /* 圓角 */
@@ -69,23 +150,13 @@ body {
     display: flex;
 }
 
-canvas {
-display: none; /* 初始隐藏画布，动画触发时显示 */
-position: fixed;
-top: 0;
-left: 0;
-pointer-events: none; /* 让画布不阻挡页面上的其他元素 */
-}
-/* 可选：样式按钮 */
-#confettiButton {
-position: fixed;
-top: 20px;
-left: 20px;
-z-index: 1000;
-padding: 10px 20px;
-background-color: #fff;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-font-size: 16px;
+canvas#confettiCanvas {
+    display: none; /* 初始隱藏畫布，動畫觸發時顯示 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 讓畫布不阻擋頁面上的其他元素 */
+    z-index: 3;
 }

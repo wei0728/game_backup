@@ -16,27 +16,22 @@
     <canvas id="confettiCanvas"></canvas>
     <div id="container">
         <div id="img-container">  
-            <div id="pose-name">            
-                <h1>運動：</h1>         
-                <h1 id="pose">深蹲</h1>
-            </div> 
-            <img id="img1" src="../assets/images/squat.png" alt="深蹲姿勢圖片">
+            <h1 id="pose-name">            
+                <div>運動：</div>         
+                <div id="pose"></div>
+            </h1> 
+            <img id="img1" alt="深蹲姿勢圖片">
         </div>
         <div id="comments">
             <div id="score-container">        
                 <h1>分數：</h1>
-                <h1 id="score"><?php echo $_SESSION["score"]; ?></h1>
+                <div id="score"><?php echo $_SESSION["score"]; ?></div>
             </div>
-            <?php
-                $conn = new Connect();
-                $conn->sql_setup();
-                // 假設你有從資料庫獲取評語的代碼
-                // echo "<div class='comment' id='grade1'>恭喜你完成挑戰！</div>";
-            ?>
             <div class="comment" id="grade1">恭喜你完成挑戰！</div>
         </div>
+        <button id = "play-again">再玩一次!!!!!</button>
+        <button id = "go-to-home_page">回主頁</button>
     </div>
     <script src="../assets/js/marathon_result.js"></script>
-    <!-- 引入 Confetti 庫 -->
 </body>
 </html>

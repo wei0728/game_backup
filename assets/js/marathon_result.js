@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const pose_label = urlParams.get('pose');
     console.log(pose_label);
     const mode_label = urlParams.get('mode');
-    //score.innerText = "Your score is : "+ score_label;
+    //score.innerText = "Your score is : "+ score_label;    
+    send_score("marathon_result_sendscore.php");
     switch (pose_label){
         case "jump_pack":
             pose.innerText = "開合跳";
@@ -37,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
             break;
         default:
     }
-    send_score("marathon_result.php");
 
 });
 
@@ -146,33 +146,41 @@ async function run(){
 }
 
 
-function send_score(url){
+function send_score(url) {
     var xhr = new XMLHttpRequest();
-        const urlParams = new URLSearchParams(window.location.search);
-        var va_pose = urlParams.get('pose');
-        var va_mode = urlParams.get('mode');
-        // Prepare the data to send
-        var data = {
-          mode: va_mode,
-          pose: va_pose
-        };
-        
-        // Convert the data to a JSON string
-        var jsonData = JSON.stringify(data);
-        
-        // Set up the AJAX request
-        xhr.open("POST", url, true);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        
-        // Define what happens on successful data submission
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-              // Request was successful
-                //console.log(xhr.responseText); // Log the response from the server
+    const urlParams = new URLSearchParams(window.location.search);
+    var va_pose = urlParams.get('pose');
+    var va_mode = urlParams.get('mode');
+
+    // 準備要發送的數據
+    var data = {
+        mode: va_mode,
+        pose: va_pose
+    };
+
+    // 將數據轉換為 JSON 字符串
+    var jsonData = JSON.stringify(data);
+
+    // 設置 AJAX 請求
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(jsonData);
+
+    // 定義數據提交成功時的處理
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                console.log(response['score']);
+                if (score.innerText >= response['score'])
+                    grade1.innerText = "破紀錄了，再接再勵喔";
+                else
+                    grade1.innerText = '之前有做過更好，再加油一點喔\n之前的分數: '+ response['score'] + '分'; 
+            } else {
+                console.error("Request failed with status:", xhr.status);
             }
-        };
-        
-        // Send the request
-        xhr.send(jsonData);
-  }
-  
+        }
+    };
+
+    // 發送請求
+}

@@ -3,12 +3,12 @@
     <head>
         <?php session_start();?>
         <meta charset="utf-8" />
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
         <link rel=stylesheet type="text/css" href="../assets/css/result.css">
-        <title>result</title>
+        <title>運動成績</title>
     </head>
 
     <body>
-    <canvas id="confettiCanvas"></canvas>
     <div id="container">
         <div id="img-container">  
             <div id="pose-name">            
@@ -22,7 +22,7 @@
                 <h1> 分數：</h1>
                 <h1 id = "score"><?php echo $_SESSION["score"]; ?></h1>
             </div>
-            <div id = flex>
+            <div id = "flex">
                 <h1>分數換算年齡：</h1>
                 <h1 id = "age">age</h1>
             </div>
@@ -31,8 +31,10 @@
             <div class="comment3" id="grade3">word</div>
             <div class="comment4" id="grade4">word</div>
             <div class="comment5" id="grade5">word</div>        
-        </div>
-    </div>
+        </div>    
+    </div>        
+    <button id = "play-again">再玩一次!!!!!</button>
+    <button id = "go-to-home_page">回主頁</button>
     <script src="../assets/js/sport_result.js"></script>
 </body>
 </html>
