@@ -36,15 +36,19 @@
                     $Connect = new Connect();
                     $v = 0;
                     $Connect->sql_setup();
-                    $sql = "select jump_pack from marathon_aerobics where player_id = ".$_SESSION['id'];
-                    $v += ($Connect->sql_search($sql, 'jump_pack') - 62) / -0.85;
-                    $sql = "select deep_squat from marathon_aerobics where player_id = ".$_SESSION['id'];
-                    $v += ($Connect->sql_search($sql, 'deep_squat') - 34) / -0.31;
-                    $sql = "select sidebend from marathon_aerobics where player_id = ".$_SESSION['id'];
-                    $v += ($Connect->sql_search($sql, 'sidebend') - 33) / -0.33;
-                    $sql = "select frontbend from marathon_aerobics where player_id = ".$_SESSION['id'];
-                    $v += ($Connect->sql_search($sql, 'frontbend') - 38) / -0.42;
-                    $v = round($v /= 4);
+                    if (mysqli_num_rows($Connect->sql_command("select jump_pack from sport_aerobics where player_id = ".$_SESSION['id']))  <= 0|| mysqli_num_rows($Connect->sql_command("select deep_squat from sport_aerobics where player_id = ".$_SESSION['id']))  <= 0|| mysqli_num_rows($Connect->sql_command("select sidebend from sport_aerobics where player_id = ".$_SESSION['id']))  <= 0|| mysqli_num_rows($Connect->sql_command("select frontbend from sport_aerobics where player_id = ".$_SESSION['id'])) <= 0)
+                        $v = 'NAN';
+                    else {
+                        $sql = "select jump_pack from sport_aerobics where player_id = ".$_SESSION['id'];
+                        $v += ($Connect->sql_search($sql, 'jump_pack') - 62) / -0.85;
+                        $sql = "select deep_squat from sport_aerobics where player_id = ".$_SESSION['id'];
+                        $v += ($Connect->sql_search($sql, 'deep_squat') - 34) / -0.31;
+                        $sql = "select sidebend from sport_aerobics where player_id = ".$_SESSION['id'];
+                        $v += ($Connect->sql_search($sql, 'sidebend') - 33) / -0.33;
+                        $sql = "select frontbend from sport_aerobics where player_id = ".$_SESSION['id'];
+                        $v += ($Connect->sql_search($sql, 'frontbend') - 38) / -0.42;
+                        $v = round($v /= 4);
+                    }
                     echo $v;
                 ?>
             </div>
@@ -103,12 +107,12 @@
                     die("Connection failed: " . mysqli_connect_error());
                 }
                 $a = 69;
-                $sql = "select player_id, $value from ".$mode."_aerobics order by $value desc limit 5";                    
+                $sql = "SELECT account.player_last_name, account.player_first_name, account.player_id, ".$mode."_aerobics.".$value." FROM account JOIN ".$mode."_aerobics ON account.player_id = ".$mode."_aerobics.player_id ORDER BY ".$mode."_aerobics.".$value." DESC LIMIT 5;";                   
                 $result = $Connect->sql_command($sql);
                 if ($result->num_rows > 0) {
                     $output = [];
                     while ($row = $result->fetch_assoc()) {
-                        $output[] = $_SESSION["last_name"]. " ".$_SESSION["first_name"].": "  . $row[$value];
+                        $output[] = $row["player_last_name"]. " ".$row["player_first_name"].": "  . $row[$value];
                     }
                     echo json_encode($output, $a);
                 } else {

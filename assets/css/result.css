@@ -1,20 +1,26 @@
+/* 重置瀏覽器預設樣式 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* 漸變背景 */
 body {
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); /* 藍色漸變背景 */
     font-family: Arial, sans-serif;
+    font-size: 100%;
     color: #000000;
     position: relative;
     overflow: hidden;
-    justify-content: center;
 }
+
+/* 幾何形狀裝飾 */
 body::before,
 body::after {
     content: '';
@@ -106,7 +112,7 @@ body::after {
 #label {
     margin: 10px 0;  /* 上下邊距 */
     padding: 5px;
-    background: #ffffff;
+    background: #000000;
     border: 1px solid gray;
     border-radius: 5px;
     width: 90%;  /* 與圖片寬度相匹配 */

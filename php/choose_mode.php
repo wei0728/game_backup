@@ -10,8 +10,8 @@
 </head>
 <body>
     <div class="container">
-        <div class="square" onclick="getter('marathon')">馬拉松模式</div>
-        <div class="square" onclick="getter('sport')">競技模式</div>
+        <div class="square" onclick="getter('marathon')">挑戰模式</div>
+        <div class="square" onclick="getter('sport')">檢測模式</div>
     </div>
 </body>
 </html>

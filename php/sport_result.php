@@ -33,8 +33,6 @@
             <div class="comment5" id="grade5">word</div>        
         </div>    
     </div>        
-    <button id = "play-again">再玩一次!!!!!</button>
-    <button id = "go-to-home_page">回主頁</button>
     <script src="../assets/js/sport_result.js"></script>
 </body>
 </html>

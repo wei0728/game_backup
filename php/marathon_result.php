@@ -29,8 +29,6 @@
             </div>
             <div class="comment" id="grade1">恭喜你完成挑戰！</div>
         </div>
-        <button id = "play-again">再玩一次!!!!!</button>
-        <button id = "go-to-home_page">回主頁</button>
     </div>
     <script src="../assets/js/marathon_result.js"></script>
 </body>

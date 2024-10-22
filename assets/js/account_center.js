@@ -3,43 +3,43 @@ window.onload = function(){
     marathon_jump_pack_rank();
 }
 function jump_pack_rank() {
-    document.getElementById('rank_name').innerText = document.getElementById('jump_pack').innerText
+    document.getElementById('rank_name').innerText = "檢測模式-"+document.getElementById('jump_pack').innerText
     send_score('jump_pack', 'sport');
 }
 function deep_squat_rank(){
-    document.getElementById('rank_name').innerText = document.getElementById('deep_squat').innerText
+    document.getElementById('rank_name').innerText = "檢測模式-"+document.getElementById('deep_squat').innerText
     send_score('deep_squat', 'sport');
 }
 function left_ankle_left_knee_rank(){
-    document.getElementById('rank_name').innerText = document.getElementById('left_ankle_left_knee').innerText
+    document.getElementById('rank_name').innerText = "檢測模式-"+document.getElementById('left_ankle_left_knee').innerText
     send_score('left_ankle_left_knee', 'sport');
 }
 function side_bend_rank(){
-    document.getElementById('rank_name').innerText = document.getElementById('sidebend').innerText
+    document.getElementById('rank_name').innerText = "檢測模式-"+document.getElementById('sidebend').innerText
     send_score('sidebend', 'sport');
 }
 function front_bend_rank(){
-    document.getElementById('rank_name').innerText = document.getElementById('frontbend').innerText
+    document.getElementById('rank_name').innerText = "檢測模式-"+document.getElementById('frontbend').innerText
     send_score('frontbend', 'sport');
 }
 function marathon_jump_pack_rank() {
-    document.getElementById('m_rank_name').innerText = "馬拉松-"+document.getElementById('m_jump_pack').innerText
+    document.getElementById('m_rank_name').innerText = "挑戰模式-"+document.getElementById('m_jump_pack').innerText
     send_score('jump_pack', 'marathon');
 }
 function marathon_deep_squat_rank(){
-    document.getElementById('m_rank_name').innerText = "馬拉松-"+document.getElementById('m_deep_squat').innerText
+    document.getElementById('m_rank_name').innerText = "挑戰模式-"+document.getElementById('m_deep_squat').innerText
     send_score('deep_squat', 'marathon');
 }
 function marathon_left_ankle_left_knee_rank(){
-    document.getElementById('m_rank_name').innerText = "馬拉松-"+document.getElementById('m_left_ankle_left_knee').innerText
+    document.getElementById('m_rank_name').innerText = "挑戰模式-"+document.getElementById('m_left_ankle_left_knee').innerText
     send_score('left_ankle_left_knee', 'marathon');
 }
 function marathon_side_bend_rank(){
-    document.getElementById('m_rank_name').innerText = "馬拉松-"+document.getElementById('m_sidebend').innerText
+    document.getElementById('m_rank_name').innerText = "挑戰模式-"+document.getElementById('m_sidebend').innerText
     send_score('sidebend', 'marathon');
 }
 function marathon_front_bend_rank(){
-    document.getElementById('m_rank_name').innerText = "馬拉松-"+document.getElementById('m_frontbend').innerText
+    document.getElementById('m_rank_name').innerText = "挑戰模式-"+document.getElementById('m_frontbend').innerText
     send_score('frontbend', 'marathon');
 }
 

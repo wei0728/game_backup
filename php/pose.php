@@ -11,7 +11,7 @@
         <canvas id = "cam" width="320" height="240"></canvas>
         <div class="iframe-container">
             <p id="labeltime" class="label" ></p>
-            <p id="labelscore" class="label" style="color:red">0</p>
+            <p id="labelscore" class="label" style="color:white">0</p>
             <img id="img1" width="460" height="415" >
             <p id="labelpose" class="label" >loading...</p>
         </div>
